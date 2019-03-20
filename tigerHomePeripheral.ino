@@ -91,7 +91,10 @@ void setPositionForServoAtPort() {
 //  Serial.println(targetPosition);
 //  Serial.println(servoDelay);
   
+  server.send(200);
+
   Serial.println("Turn on Servos...");
+
   turnOnServo(port);
   
   if (currentPosition < targetPosition) {
@@ -132,9 +135,7 @@ void setPositionForServoAtPort() {
   }
 
   Serial.println("Turn off Servos...");
-  turnOffServos();
-   
-  server.send(200);
+  turnOffServos();   
 }
 
 void turnOnServo(int port) {
